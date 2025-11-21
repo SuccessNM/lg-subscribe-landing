@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOM BUAT DUIT DENGAN LG SUBSCRIBE!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        
+        :root {
+            --lg-red: #E30022;
+            --lg-dark: #2D2D2D;
+            --lg-light: #F7F7F7;
+            --success: #28a745;
+            --error: #dc3545;
+        }
+        
+        body { line-height: 1.6; color: #333; background-color: var(--lg-light); }
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Header */
+        header { background-color: white; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); position: fixed; width: 100%; z-index: 1000; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
+        .logo-container { display: flex; align-items: center; gap: 15px; }
+        .official-logo { height: 50px; width: auto; }
+        .program-title { 
+            font-size: 1.4rem; 
+            font-weight: 700; 
+            color: #E30022;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .contact-info { display: flex; align-items: center; gap: 8px; font-weight: 500; }
+        
+        /* Hero Section */
+        .hero { padding-top: 120px; background: linear-gradient(135deg, #ffffff 0%, var(--lg-light) 100%); }
+        .hero-content { display: flex; align-items: center; justify-content: space-between; gap: 50px; }
+        .hero-text { flex: 1; }
+        .hero-text h1 { font-size: 2.5rem; margin-bottom: 1.5rem; color: var(--lg-dark); line-height: 1.3; }
+        .hero-text .highlight { color: var(--lg-red); }
+        .hero-text p { font-size: 1.2rem; color: #666; margin-bottom: 2rem; }
+        
+        .benefit-highlights p { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+        
+        /* Form Styles */
+        .hero-form { flex: 1; background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); border-top: 5px solid var(--lg-red); }
+        .form-title { text-align: center; margin-bottom: 20px; color: var(--lg-dark); font-size: 1.5rem; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: #555; }
+        .form-group input { width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem; }
+        .form-group input:focus { border-color: var(--lg-red); outline: none; box-shadow: 0 0 0 2px rgba(227, 0, 34, 0.2); }
+        
+        .btn { display: inline-block; padding: 15px 35px; background-color: var(--lg-red); color: white; border: none; border-radius: 5px; font-weight: 700; font-size: 1.1rem; transition: all 0.3s ease; cursor: pointer; width: 100%; }
+        .btn:hover { background-color: #c1001a; transform: translateY(-3px); }
+        .btn:disabled { background-color: #cccccc; cursor: not-allowed; transform: none; }
+        
+        .form-note { font-size: 0.9rem; color: #666; text-align: center; margin-top: 15px; }
+        
+        /* Messages */
+        .success-message { display: none; background-color: var(--success); color: white; padding: 15px; border-radius: 5px; margin-top: 20px; text-align: center; }
+        .error-message { display: none; background-color: var(--error); color: white; padding: 15px; border-radius: 5px; margin-top: 20px; text-align: center; }
+        .loading { display: none; text-align: center; margin-top: 20px; }
+        
+        /* Income Section */
+        .income-section { background: white; padding: 80px 0; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 2.2rem; color: var(--lg-dark); margin-bottom: 15px; }
+        .section-title p { color: #666; font-size: 1.1rem; }
+        .income-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .income-card { background: var(--lg-light); padding: 30px; border-radius: 10px; text-align: center; border-left: 4px solid var(--lg-red); }
+        .income-amount { font-size: 2rem; font-weight: bold; color: var(--lg-red); margin-bottom: 10px; }
+        
+        @media (max-width: 768px) {
+            .hero-content { flex-direction: column; }
+            .hero { padding-top: 100px; }
+            .hero-text h1 { font-size: 2rem; text-align: center; }
+            .hero-text { text-align: center; }
+            .official-logo { height: 40px; }
+            .program-title { font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo-container">
+                    <img src="https://lgsubscribes.com.my/main/wp-content/uploads/2024/11/web-mainpage-featured.jpg" alt="LG Subscribe Official Logo" class="official-logo">
+                    <div class="program-title">LG Subscribe Program</div>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-envelope"></i> successnm@atomicmail.io
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1><span class="highlight">JOM BUAT DUIT</span> DENGAN LG SUBSCRIBE!</h1>
+                    <p>Sertai program jana pendapatan rasmi LG dan mula hasilkan pendapatan tambahan dengan produk home appliances terkemuka. Kerja fleksibel, hasil lumayan!</p>
+                    <div class="benefit-highlights">
+                        <p><i class="fas fa-check-circle" style="color: #E30022;"></i> Pendapatan sehingga RM5,000 sebulan</p>
+                        <p><i class="fas fa-check-circle" style="color: #E30022;"></i> Kerja fleksibel - tiada waktu tetap</p>
+                        <p><i class="fas fa-check-circle" style="color: #E30022;"></i> Sokongan berterusan & bimbingan pakar</p>
+                        <p><i class="fas fa-check-circle" style="color: #E30022;"></i> Produk jenama antarabangsa terkemuka</p>
+                    </div>
+                </div>
+                <div class="hero-form">
+                    <h3 class="form-title">Daftar Sekarang!</h3>
+                    <p style="text-align: center; font-size: 0.95rem; margin-bottom: 20px; color: #666;">Isi borang di bawah untuk menyertai program rasmi LG Subscribe</p>
+                    
+                    <form id="leadForm" action="https://formspree.io/f/xqanognz" method="POST">
+                        <div class="form-group">
+                            <label for="name">Nama Penuh</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Alamat Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Nombor Telefon</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <button type="submit" class="btn" id="submitBtn">HANTAR PERMOHONAN</button>
+                    </form>
+                    
+                    <div class="loading" id="formLoading">
+                        <i class="fas fa-spinner fa-spin"></i> Menghantar permohonan...
+                    </div>
+                    
+                    <div id="successMessage" class="success-message">
+                        <i class="fas fa-check-circle"></i> Terima kasih! Permohonan anda telah dihantar. Wakil LG akan menghubungi anda dalam masa 24 jam.
+                    </div>
+                    
+                    <div id="errorMessage" class="error-message">
+                        <i class="fas fa-exclamation-circle"></i> Maaf, terdapat masalah teknikal. Sila hubungi kami terus di successnm@atomicmail.io
+                    </div>
+                    
+                    <p class="form-note"><i class="fas fa-lock"></i> Maklumat anda akan dihantar terus kepada wakil rasmi LG Subscribe</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('leadForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const loading = document.getElementById('formLoading');
+            const successMessage = document.getElementById('successMessage');
+            const errorMessage = document.getElementById('errorMessage');
+            
+            // Hide messages and show loading
+            successMessage.style.display = 'none';
+            errorMessage.style.display = 'none';
+            submitBtn.disabled = true;
+            loading.style.display = 'block';
+            
+            try {
+                const response = await fetch(this.action, {
+                    method: 'POST',
+                    body: new FormData(this),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    successMessage.style.display = 'block';
+                    this.reset();
+                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    errorMessage.style.display = 'block';
+                    errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            } catch (error) {
+                errorMessage.style.display = 'block';
+                errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } finally {
+                loading.style.display = 'none';
+                submitBtn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>
